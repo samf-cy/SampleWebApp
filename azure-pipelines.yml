@@ -28,3 +28,11 @@ stages:
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
+    - task: Docker@2
+      displayName: Push an image
+      inputs:
+        containerRegistry: 'dockerhub connection'
+        repository: 'amsf9619/internshipm'
+        command: 'push'
+        Dockerfile: '**/Dockerfile'
+        tags: '$(tag)'
